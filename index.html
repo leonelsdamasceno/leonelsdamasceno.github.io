@@ -68,7 +68,8 @@ ul, ol {
 }
 
 /* Estilo para os itens da lista */
-li {
+a {
+    display: block;
     margin-bottom: 10px;
     font-size: 18px;
     line-height: 1.4;
@@ -81,34 +82,42 @@ li:hover{
   background-color: rgba(255, 0, 0, .7);
   color:black;
 }
-
     </style>
   </head>
   <h1>Avaliação Final de Informática Aplicada ao Comércio Eletrônico</h1>
   <body>
     <h2>Aspectos do Gerais</h2>
     <ol>
-      <li>O que é o Comércio Eletrônico?</li>
-      <li>Quais são os principais benefícios do comércio eletrônico para os consumidores?</li>
-      <li>Quais são os principais benefícios do comércio eletrônico para os empreendedores?</li>
+      <a>O que é o Comércio Eletrônico?</a>
+      <a>Quais são os principais benefícios do comércio eletrônico para os consumidores?</a>
+      <a>Quais são os principais benefícios do comércio eletrônico para os empreendedores?</a>
     </ol>
     <h2> Aspectos de Marketing</h2>
     <ol>
-      <li>
+      <a>
         O que é a microsegmentação no contexto de Marketing Digital?
-      </li>
-      <li>
+      </a>
+      <a>
         Como as redes sociais influenciam o comércio eletrônico?</strong
-    </li>
-    <li>Qual é o impacto da mobilidade (computação móvel) no comércio eletrônico?</li>
+    </a>
+    <a>Qual é o impacto da mobilidade (computação móvel) no comércio eletrônico?</a>
     </ol>
     
     <h2>Aspectos Técnicos</h2>
     <ol>
-      <li>O que é um endereço IP? Como ele se diferencia do conceito de endereço de site, i.e. os URLs?</li>
-      <li> Quais são as três principais tecnologias utilizadas para criação de conteúdo (docuemntos, aplicações e serviços) na Web? E qual a finalidade de cada tecnologia?</li>
-      <li>O que é um servidor Web?</li>
+      <a>O que é um endereço IP? Como ele se diferencia do conceito de endereço de site, i.e. os URLs?</a>
+      <a> Quais são as três principais tecnologias utilizadas para criação de conteúdo (docuemntos, aplicações e serviços) na Web? E qual a finalidade de cada tecnologia?</a>
+      <a>O que é um servidor Web?</a>
     </ol>
+    <script>
+      lista = document.getElementsByTagName('a')
 
+      for (let el of lista) {
+        let conteudo = el.innerHTML + "\n"
+        let link = `https://api.whatsapp.com/send?phone=5585996201236&text=${encodeURI(conteudo)}`
+        el.target="_blank"
+        el.href = link
+      }
+    </script>
   </body>
 </html>
